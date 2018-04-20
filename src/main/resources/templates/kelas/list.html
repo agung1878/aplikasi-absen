@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      th:with="activeTab='kelas'"
+      layout:decorate="~{layout}">
+    <head>
+        <title>Kelas</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <section layout:fragment="content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="card-box">
+                        <p>
+                            <a th:href="@{/kelas/form}" class="btn btn-primary"> Tambah Kelas</a>
+                            &nbsp; &nbsp;
+                        </p>
+                        <div class="row">
+                            <div class="col-sm-12 col-xs-12 col-md-12 col-lg-3 col-lg-12">
+                                <h4 class="header-title m-t-0">Kelas</h4>
+                                <div class="p-20">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Nama kelas</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <a>
+                                                        <button class="btn btn-warning"><i class="zmdi zmdi-edit">Edit</i></button></a>
+                                                    <a>
+                                                        <button class="btn btn-danger"><i class="zmdi zmdi-delete">Hapus</i></button></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

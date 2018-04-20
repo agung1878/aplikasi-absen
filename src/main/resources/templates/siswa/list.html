@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      th:with="activeTab='siswa'"
+      layout:decorate="~{layout}">
+    <head>
+        <title>Halaman Siswa</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <section layout:fragment="content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="card-box">
+                        <p>
+                            <a th:href="@{/siswa/form}" class="btn btn-primary"> Tambah Siswa</a>
+                            &nbsp; &nbsp;
+                        </p>
+                        <div class="row">
+                            <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
+                                <h4 class="header-title m-t-0">List Siswa</h4>
+                                <p class="text-muted font-13 m-b-10">
+                                    Berikut adalah daftar <code>.Siswa KOPI PAGI</code> dari semua kelas.
+                                </p>
+                                <div class="p-20">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Nis</th>
+                                                <th>Nama</th>
+                                                <th>Kelas</th>
+                                                <th>Jurusan</th>
+                                                <th>Tanggal Lahir</th>
+                                                <th>Tempat Lahir</th>
+                                                <th>Jenis Kelamin</th>
+                                                <th>Alamat</th>
+                                                <th>Agama</th>
+                                                <th>No. Tlp.</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1234</td>
+                                                <td>Dian</td>
+                                                <td>XXI</td>
+                                                <td>RPL</td>
+                                                <td>28-08-1998</td>
+                                                <td></td>
+                                                <td>Laki-laki</td>
+                                                <td>Jl. holiwood</td>
+                                                <td>Islam</td>
+                                                <td></td>
+                                                <td>
+                                                    <a>
+                                                        <button class="btn btn-info" type="button"><i class="zmdi zmdi-edit"></i> edit</button>
+                                                    </a>
+                                                    <a>
+                                                        <button class="btn btn-danger" type="button"><i class="zmdi zmdi-delete"></i> Delete</button>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

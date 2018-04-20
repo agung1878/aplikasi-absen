@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      th:with="activeTab='absen'"
+      layout:decorate="~{layout}">
+    <head>
+        <title>Form Absen</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <section layout:fragment="content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="card-box">
+                        <h4 class="header-title m-t-0 m-b-30">Form</h4>
+                        <div class="row">
+                            <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-12">
+                                <form>
+                                    <fieldset class="form-group">
+                                        <label>Siswa</label>
+                                        <input type="text" class="form-control" 
+                                               placeholder="Enter Siswa">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label> Masuk
+                                        <input class="checkbox checkbox-primary" id="checkbox21" type="checkbox"/></label>
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label> Izin
+                                        <input class="checkbox checkbox-primary" id="checkbox21" type="checkbox"/></label>
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label> Sakit
+                                        <input class="checkbox checkbox-primary" id="checkbox21" type="checkbox"/></label>
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label> Alfa
+                                        <input class="checkbox checkbox-primary" id="checkbox21" type="checkbox"/></label>
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label>Tanggal Absen</label>
+                                        <input type="date" class="form-control"
+                                               placeholder="Enter Tanggal">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label>Keterangan</label>
+                                        <input type="text" class="form-control"
+                                               placeholder="Enter Keterangan">
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                        <button class="btn btn-success">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      th:with="activeTab='absen'"
+      layout:decorate="~{layout}">
+    <head>
+        <title>Halaman Absensi</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <section layout:fragment="content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="card-box">
+                        <p>
+                            <a th:href="@{/absen/form}" class="btn btn-primary"> Masuk</a>
+                            &nbsp; &nbsp;
+                        </p>
+                        <div class="row">
+                            <div class="col-sm-12 col-xs-12 col-md-12 col-lg-3 col-lg-12">
+                                <h4 class="header-title m-t-0">Absensi</h4>
+                                <div class="p-20">
+                                    <h6 class="text-muted">Pilih Jurusan :</h6>
+                                    <select class="form-control2 select2">
+                                        <option selected>--Pilih--</option>
+                                        <option value="1">RPL</option>
+                                        <option value="2">TKJ</option>
+                                    </select>
+                                </div>
+                                <div class="p-10">
+                                    <h6 class="text-muted">Pilih Kelas :</h6>
+                                    <select class="form-control2 select2">
+                                        <option selected>--Pilih--</option>
+                                        <option value="1">X</option>
+                                        <option value="2">XI</option>
+                                        <option value="2">XII</option>
+                                    </select>
+                                </div>
+                                <div class="p-10">
+                                    <button type="button" class="btn btn-secondary waves-effect">Cari</button>
+                                </div>
+                                <div class="p-10">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Siswa</th>
+                                                <th>Absen</th>
+                                                <th>Keterangan</th>
+                                                <th>Tanggal Absen</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <a href="#"><button class="btn btn-warning"><i class="zmdi zmdi-edit">Edit</i></button></a>
+                                                    <a href="#"><button class="btn btn-danger"><i class="zmdi zmdi-delete">Hapus</i></button></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
