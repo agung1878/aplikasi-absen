@@ -29,13 +29,13 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td></td>
+                                            <tr th:each="k : ${data.content}">
+                                                <td th:text="${k.namaKelas}"></td>
                                                 <td>
-                                                    <a>
-                                                        <button class="btn btn-warning"><i class="zmdi zmdi-edit">Edit</i></button></a>
-                                                    <a>
-                                                        <button class="btn btn-danger"><i class="zmdi zmdi-delete">Hapus</i></button></a>
+                                                        <a th:href="@{/kelas/form(id=${k.id})}" class="btn btn-warning">
+                                                            <i class="zmdi zmdi-edit">Edit</i></a>
+                                                        <a th:href="@{/kelas/delete(id=${k.id})}" class="btn btn-danger">
+                                                            <i class="zmdi zmdi-delete">Hapus</i></a>
                                                 </td>
                                             </tr>
                                         </tbody>

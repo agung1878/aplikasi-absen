@@ -16,17 +16,18 @@
                         <h4 class="header-title m-t-0 m-b-30">Form</h4>
                         <div class="row">
                             <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-12">
-                                <form>
+                                <form class="form" th:action="@{/jurusan/form}" th:method="post" th:object="${jurusan}">
+                                    <input type="hidden" th:field="*{id}" />
                                     <fieldset class="form-group">
                                         <label>Nama Jurusan</label>
                                         <input type="text" class="form-control" 
-                                               placeholder="Enter Nama Jurusan">
+                                               placeholder="Enter Nama Jurusan" th:field="*{namaJurusan}">
                                         <div class="help-block with-errors"></div>
                                     </fieldset>
+                                    <button type="submit" class="btn btn-success">Submit</button>
                                 </form>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-success">Submit</button>
                     </div>
                 </div>
             </div>

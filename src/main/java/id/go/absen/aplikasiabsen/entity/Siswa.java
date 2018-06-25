@@ -23,16 +23,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Table
 public class Siswa extends BaseEntity{
     
-    @ManyToOne
-    @NotNull
-    @JoinColumn(name = "id_kelas")
-    public Kelas kelas;
-
-    @ManyToOne
-    @NotNull
-    @JoinColumn(name = "id_jurusan")
-    public Jurusan jurusan;
-
     @NotNull
     @NotEmpty
     @Size(min = 3, max = 10)
@@ -42,7 +32,17 @@ public class Siswa extends BaseEntity{
     @NotNull
     @NotEmpty
     public String namaSiswa;
-
+    
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "id_kelas")
+    private Kelas kelas;
+    
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "id_jurusan")
+    private Jurusan jurusan;
+    
     @NotNull
     @NotEmpty
     public String alamat;
@@ -72,22 +72,6 @@ public class Siswa extends BaseEntity{
     @UpdateTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     private Date updatedAt;
-
-    public Kelas getKelas() {
-        return kelas;
-    }
-
-    public void setKelas(Kelas kelas) {
-        this.kelas = kelas;
-    }
-
-    public Jurusan getJurusan() {
-        return jurusan;
-    }
-
-    public void setJurusan(Jurusan jurusan) {
-        this.jurusan = jurusan;
-    }
 
     public String getNis() {
         return nis;
@@ -159,6 +143,22 @@ public class Siswa extends BaseEntity{
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public Kelas getKelas() {
+        return kelas;
+    }
+
+    public void setKelas(Kelas kelas) {
+        this.kelas = kelas;
+    }
+
+    public Jurusan getJurusan() {
+        return jurusan;
+    }
+
+    public void setJurusan(Jurusan jurusan) {
+        this.jurusan = jurusan;
     }
     
     

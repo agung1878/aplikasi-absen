@@ -14,5 +14,5 @@ public interface SiswaDao extends PagingAndSortingRepository<Siswa, String>{
     public Page<Siswa> findBynamaSiswaContainingIgnoreCase(String namaSiswa, Pageable page);
     
     Siswa findBynamaSiswa(String namaSiswa);
-    
+
 }

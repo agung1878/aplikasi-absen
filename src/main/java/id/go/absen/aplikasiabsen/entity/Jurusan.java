@@ -15,7 +15,7 @@ import org.hibernate.annotations.UpdateTimestamp;
  * @author agung
  */
 @Entity
-@Table
+@Table(name ="jurusan")
 public class Jurusan extends BaseEntity{
 
     @NotNull

@@ -16,65 +16,66 @@
                         <h4 class="header-title m-t-0 m-b-30">Form</h4>
                         <div class="row">
                             <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-12">
-                                <form>
+                                <form class="form" th:action="@{/siswa/form}" th:method="post" th:object="${siswa}">
+                                    <input type="hidden" th:field="*{id}" />
                                     <fieldset class="form-group">
                                         <label>Nis</label>
                                         <input type="text" class="form-control"
-                                               placeholder="Enter Nis">
+                                               placeholder="Enter Nis" th:field="*{nis}">
                                     </fieldset>
                                     <fieldset class="form-group">
                                         <label>Nama</label>
                                         <input type="text" class="form-control"
-                                               placeholder="Enter Nama">
+                                               placeholder="Enter Nama" th:field="*{namaSiswa}">
                                     </fieldset>
                                     <fieldset class="form-group">
                                         <label>Kelas</label>
-                                        <div>
-                                            <input type="checkbox" />
-                                            <label>Option List</label>
-                                        </div>
+                                        <select class="form-control" th:field="*{kelas}">
+                                            <option value=""> --- </option>
+                                            <option th:each="x : ${listKelas}" th:value="${x.id}" th:utext="${x.namaKelas}"></option>
+                                        </select>
                                     </fieldset>
-                                    <fieldset class="form-group">
+                                     <fieldset class="form-group">
                                         <label>Jurusan</label>
-                                        <div>
-                                            <input type="checkbox"/>
-                                            <label>Option List</label>
-                                        </div>
+                                        <select class="form-control" th:field="*{jurusan}">
+                                            <option value=""> --- </option>
+                                            <option th:each="x : ${listJurusan}" th:value="${x.id}" th:utext="${x.namaJurusan}"></option>
+                                        </select>
                                     </fieldset>
                                     <fieldset class="form-group">
                                         <label>Tanggal Lahir</label>
                                         <input type="date" class="form-control"
-                                               placeholder="Enter Tanggal Lahir">
+                                               placeholder="Enter Tanggal Lahir" th:field="*{tanggalLahir}">
                                     </fieldset>
                                     <fieldset class="form-group">
                                         <label>Tempat Lahir</label>
                                         <input type="text" class="form-control"
-                                               placeholder="Enter Tempat Lahir">
+                                               placeholder="Enter Tempat Lahir" th:field="*{tempatLahir}">
                                     </fieldset>
                                     <fieldset class="form-group">
                                         <label>Jenis Kelamin</label>
                                         <input type="text" class="form-control"
-                                               placeholder="Enter Jenis Kelamin">
+                                               placeholder="Enter Jenis Kelamin" th:field="*{jenisKelamin}">
                                     </fieldset>
                                     <fieldset class="form-group">
                                         <label>Alamat</label>
                                         <input type="text" class="form-control"
-                                               placeholder="Enter Allamat">
+                                               placeholder="Enter Allamat" th:field="*{alamat}">
                                     </fieldset>
                                     <fieldset class="form-group">
                                         <label>Agama</label>
                                         <input type="text" class="form-control"
-                                               placeholder="Enter Agama">
+                                               placeholder="Enter Agama" th:field="*{agama}">
                                     </fieldset>
                                     <fieldset class="form-group">
                                         <label>No. Tlp.</label>
                                         <input type="text" class="form-control"
-                                               placeholder="Enter No. Tlp.">
+                                               placeholder="Enter No. Tlp." th:field="*{nomorTelepon}">
                                     </fieldset>
+                                    <button type="submit" class="btn btn-success">Submit</button>
                                 </form>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-success">Submit</button>
                     </div>
                 </div>
             </div>

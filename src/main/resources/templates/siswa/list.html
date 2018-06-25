@@ -41,28 +41,33 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1234</td>
-                                                <td>Dian</td>
-                                                <td>XXI</td>
-                                                <td>RPL</td>
-                                                <td>28-08-1998</td>
-                                                <td></td>
-                                                <td>Laki-laki</td>
-                                                <td>Jl. holiwood</td>
-                                                <td>Islam</td>
-                                                <td></td>
+                                            <tr th:each="c : ${data.content}">
+                                                <td th:text="${c.nis}">1234</td>
+                                                <td th:text="${c.namaSiswa}">Dian</td>
+                                                <td th:text="${c.kelas.namaKelas}">XXI</td>
+                                                <td th:text="${c.jurusan.namaJurusan}">RPL</td>
+                                                <td th:text="${c.tanggalLahir}">28-08-1998</td>
+                                                <td th:text="${c.tempatLahir}"></td>
+                                                <td th:text="${c.jenisKelamin}">Laki-laki</td>
+                                                <td th:text="${c.alamat}">Jl. holiwood</td>
+                                                <td th:text="${c.agama}">Islam</td>
+                                                <td th:text="${c.nomorTelepon}"></td>
                                                 <td>
-                                                    <a>
-                                                        <button class="btn btn-info" type="button"><i class="zmdi zmdi-edit"></i> edit</button>
-                                                    </a>
-                                                    <a>
-                                                        <button class="btn btn-danger" type="button"><i class="zmdi zmdi-delete"></i> Delete</button>
-                                                    </a>
+                                                    <a th:href="@{/siswa/form(id=${c.id})}" class="btn btn-warning">
+                                                        <i class="zmdi zmdi-edit">Edit</i></a>
+                                                    <a th:href="@{/siswa/delete(id=${c.id})}" class="btn btn-danger">
+                                                        <i class="zmdi zmdi-delete">Hapus</i></a>
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
+                                    <nav style="text-align: center;">
+                                        <ul class="pagination pagination-split" sd:pagination="full">
+                                            <!-- Pagination created by SpringDataDialect, this content is just for mockup -->
+                                            <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                                            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                                        </ul>
+                                    </nav>
                                 </div>
                             </div>
                         </div>
